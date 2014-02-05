@@ -18,7 +18,24 @@ OptionParser.new do |opts|
     end
 end.parse!
 
-config = YAML.load(File.read(File.dirname(__FILE__) + "/../config.yaml"))
+useConfigFile = ''
+configFilePaths = [
+    File.expand_path('~/.wutbranch/config.yaml'),
+    File.dirname(__FILE__) + "/../config.yaml"
+]
+
+configFilePaths.each do |path|
+    if File.exists? path
+        useConfigFile = path
+        break
+    end
+end
+
+if useConfigFile.empty?
+    puts "config.yaml not found in " + configFilePaths.join(', ');
+end
+
+config = YAML.load(File.read(useConfigFile))
 
 servers = config['servers']
 
