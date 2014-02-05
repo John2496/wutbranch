@@ -1,0 +1,31 @@
+servers:
+    -
+        name: "Staging Server"
+        group: "staging"
+        host: "staging.domain.com"
+        user: "user"
+        key: "/path/to/key.pem"
+        repos:
+            "Web App #1": "/var/www/staging/an-app"
+            "Web App #2": "/var/www/staging/another-app"
+        is_disabled: false
+
+    -
+        name: "Staging Server #2"
+        group: "staging"
+        host: "staging-2.domain.com"
+        user: "user"
+        key: "/path/to/key.pem"
+        repos:
+            "Web App #1": "/var/www/staging/an-app"
+            "Web App #2": "/var/www/staging/another-app"
+
+    -
+        name: "Dev Server"
+        group: "dev"
+        host: "dev.domain.com"
+        user: "user"
+        key: "/path/to/key.pem"
+        repos:
+            "Web App #1": "/var/www/staging/an-app"
+            "Web App #2": "/var/www/staging/another-app"
