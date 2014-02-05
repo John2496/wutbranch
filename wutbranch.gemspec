@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
     s.name = 'wutbranch'
-    s.version = '0.0.2'
+    s.version = '0.0.4'
     s.date = '2014-02-04'
     s.summary = "Console utility to display the current branch on remote servers."
     s.description = "Console utility to display the current branch on remote servers."
@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
                 "bin/*",
                 "Gemfile",
                 "config.yaml.example"]
+    s.executables << 'wutbranch'
     s.homepage = 'http://rubygems.org/gems/wutbranch'
     s.license = 'MIT'
 end
